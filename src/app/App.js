@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./components/common/Header/Header";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Home from "./components/common/Home";
 import Heros from "./components/common/Heros";
 import Episode from "./components/common/Episode";
@@ -22,6 +22,7 @@ function App() {
         <Route path="/episode/:id" element={<EpisodeItem />} />
         <Route path="/location" element={<Location />} />
         <Route path="/location/:id" element={<LocationItem />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </div>
   );
